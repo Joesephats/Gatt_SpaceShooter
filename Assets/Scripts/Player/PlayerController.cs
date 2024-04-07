@@ -11,16 +11,20 @@ public class PlayerController : MonoBehaviour
     float turnInput = 0;
     [SerializeField] GameObject moveTarget;
 
+    Ship playerShip;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        playerShip = new Ship(3, speed);
     }
 
     // Update is called once per frame
     void Update()
     {
         KeepInBounds();
+        HandleShoot();
     }
 
     private void FixedUpdate()
@@ -49,6 +53,15 @@ public class PlayerController : MonoBehaviour
         //transform.localEulerAngles += new Vector3(0, turnInput, 0);
     }
 
+    void HandleShoot()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<PlayerSoundManager>().PlayLaserSFX();
+            Debug.Log("FIRE!");
+            //object pooling bullet stuff.
+        }
+    }
     void KeepInBounds()
     {
         Vector3 pos = transform.position;
@@ -91,4 +104,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    bool CheckDead()
+    {
+        if (!playerShip.Alive)
+        {
+            return true;
+        }
+        return false;
+    }
 }

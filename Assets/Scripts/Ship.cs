@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Ship
 {
-    int hp;
-    int speed;
+    protected int hp;
+    protected int speed;
+    protected bool isAlive;
 
     public int HP
     {
@@ -17,10 +18,23 @@ public class Ship
         get { return speed; }
         set { speed = value; }
     }
+    public bool Alive
+    {
+        get { return isAlive; }
+    }
 
     public Ship(int setHp, int setSpeed)
     {
         hp = setHp;
         speed = setSpeed;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        hp -= damage;
+        if (hp < 1)
+        {
+            isAlive = false;
+        }
     }
 }
