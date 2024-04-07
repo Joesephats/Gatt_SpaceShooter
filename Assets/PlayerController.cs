@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        KeepInBounds();
     }
 
     private void FixedUpdate()
@@ -42,8 +42,53 @@ public class PlayerController : MonoBehaviour
     void Steer()
     {
         turnInput = Input.GetAxisRaw("Horizontal") * turnSpeed * Time.fixedDeltaTime;
-        Debug.Log(turnInput);
 
-        transform.localEulerAngles += new Vector3(0, turnInput, 0);
+        //produces slight warbling on x and z rotations
+        rb.AddTorque(transform.up * turnInput);
+
+        //transform.localEulerAngles += new Vector3(0, turnInput, 0);
     }
+
+    void KeepInBounds()
+    {
+        Vector3 pos = transform.position;
+        Vector3 rot = transform.localEulerAngles;
+
+        if (pos.x < -37.5f || pos.x > 37.5)
+        {
+            if (pos.x < -37.5)
+            {
+                pos.x = 36.5f;
+                transform.position = new Vector3(pos.x, pos.y, pos.z);
+                transform.localEulerAngles = rot;
+            }
+            else if (pos.x > 37.5)
+            {
+                pos.x = -36.5f;
+                transform.position = new Vector3(pos.x, pos.y, pos.z);
+                transform.localEulerAngles = rot;
+
+            }
+            Debug.Log("TOO FAR X");
+        }
+        if (pos.z < -21.5f || pos.z > 21.5f)
+        {
+            if (pos.z < -22)
+            {
+                pos.z = 21;
+                transform.position = new Vector3(pos.x, pos.y, pos.z);
+                transform.localEulerAngles = rot;
+
+            }
+            else if (pos.z > 22)
+            {
+                pos.z = -21;
+                transform.position = new Vector3(pos.x, pos.y, pos.z);
+                transform.localEulerAngles = rot;
+
+            }
+
+        }
+    }
+
 }
