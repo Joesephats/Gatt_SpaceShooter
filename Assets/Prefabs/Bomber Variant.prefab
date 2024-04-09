@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6129850764473252279, guid: de81c4cc4a723254cba1427028cca900, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.686
       objectReference: {fileID: 0}
     - target: {fileID: 6129850764473252279, guid: de81c4cc4a723254cba1427028cca900, type: 3}
       propertyPath: m_LocalPosition.y
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6129850764473252279, guid: de81c4cc4a723254cba1427028cca900, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 6129850764473252279, guid: de81c4cc4a723254cba1427028cca900, type: 3}
       propertyPath: m_LocalRotation.w
@@ -129,7 +129,7 @@ MonoBehaviour:
   explosionParticles: {fileID: 3620922182180034155, guid: 4580dbae6edfc6a40a72852c144f8531, type: 3}
   explosionSFX: {fileID: 8300000, guid: fa8f0fbee41999a46a5433022778b4c2, type: 3}
   laser: {fileID: 3664783278448308201, guid: c8e28ca7eabeb5c428f7726c1480f28e, type: 3}
-  speed: 5
+  speed: 10
 --- !u!54 &-4006460527025602123
 Rigidbody:
   m_ObjectHideFlags: 0
