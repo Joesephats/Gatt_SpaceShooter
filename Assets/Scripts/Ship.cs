@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ship
 {
     protected int hp;
-    protected int speed;
     protected bool isAlive;
 
     public int HP
@@ -13,20 +12,17 @@ public class Ship
         get { return hp; }
         set { hp = value; }
     }
-    public int Speed
-    {
-        get { return speed; }
-        set { speed = value; }
-    }
+
     public bool Alive
     {
         get { return isAlive; }
     }
 
-    public Ship(int setHp, int setSpeed)
+    public Ship(int setHp)
     {
         hp = setHp;
-        speed = setSpeed;
+
+        isAlive = true;
     }
 
     public void TakeDamage(int damage)

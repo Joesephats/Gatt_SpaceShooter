@@ -60,11 +60,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyLaser
       objectReference: {fileID: 0}
+    - target: {fileID: 7681846392584844504, guid: 50486a593a4f54f4bb8aa50e80d730c8, type: 3}
+      propertyPath: m_TagString
+      value: EnemyLaser
+      objectReference: {fileID: 0}
     - target: {fileID: 8255894244213381206, guid: 50486a593a4f54f4bb8aa50e80d730c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2e4babf89c4cd564a8cf50e30f4b4e7e, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 164337083978957087, guid: 50486a593a4f54f4bb8aa50e80d730c8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

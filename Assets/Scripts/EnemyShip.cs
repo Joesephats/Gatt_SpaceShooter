@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class EnemyShip : Ship
 {
-    public EnemyShip(int hp, int speed) : base(hp, speed)
+    public EnemyShip(int hp) : base(hp)
     {
         hp = 1;
-        speed = 6;
     }
 }
